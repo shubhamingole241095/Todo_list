@@ -1,0 +1,45 @@
+<h1> Edit  Information</h1>
+<center>
+<%= form_for(@addresses) do |f| %>
+    <style>
+    div {
+      background-color: lightgrey;
+      width: 300px;
+      border: 1px solid green;
+      padding: 5px;
+      margin: 20px;
+    }
+    </style>
+      <div class ="">
+        <%= f.label:address_line1 %>
+        <%= f.text_field:address_line1 %>
+      </div><br>
+    
+      <div class="">
+        <%= f.label:address_line2 %>
+        <%= f.text_field:address_line2 %>
+      </div><br>
+  
+      <div class="">
+        <%= f.label:city %>
+        <%= f.text_field:city %>
+      </div><br>
+  
+      <div class="">
+        <%= f.label:country %>
+        <%= f.text_field:country %>
+      </div><br>
+  
+      <div class="">
+        <%= f.label:pincode %>
+        <%= f.text_field:pincode %>
+      </div><br>
+      
+    
+      <div class="">
+        <%= f.submit %>
+        
+      </div>
+      
+      
+      <% end %></center>

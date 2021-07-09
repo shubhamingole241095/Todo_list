@@ -1,0 +1,6 @@
+<% @todo_item = @todo_list.todo_items.build %>
+<%= form_for(@todo_item) do |f| %>
+ <%= f.hidden_field :todo_list_id, value: @todo_list.id %>
+  <%= f.text_field :content, placeholder: "New Todo", autofocus: true %>
+  <%= f.submit %>
+<% end %>

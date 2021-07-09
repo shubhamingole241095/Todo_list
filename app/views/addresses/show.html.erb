@@ -1,0 +1,18 @@
+<!doctype html>
+<html><center>
+<head>
+<h1>Showing specific recodes details</h1>
+</head>
+  <body>
+<p>address line1: <%= @address.address_line1 %></p>
+<p>address line2: <%= @address.address_line2 %></p>
+<p>city: <%= @address.city %></p>
+
+<p>country: <%=@address.country %></p>
+<p>pincode: <%=@address.pincode %></p>
+
+<%= link_to 'Edit', edit_address_path(@address) %>
+<%= link_to 'Delete', address_path(@address) %>
+</body></center>
+</html>
+

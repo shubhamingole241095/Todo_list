@@ -1,0 +1,13 @@
+<h1> Address information</h1>
+<% if @addresses.empty? %>
+<p>No lists found. create one using the button</p>
+<% end %>
+
+<% @addresses.each do |todo_list| %>
+<h2><%=addresses.address_line1%></h2>
+<h2><%=addresses.address_line2%></h2>
+<h2><%=addresses.city%></h2>
+<h2><%=addresses.country%></h2>
+<h2><%=addresses.pincode%></h2>
+<% end %>
+<%= link_to 'Add address', addresses_path %>

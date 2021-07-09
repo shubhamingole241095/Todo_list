@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div
+{
+  border: 1px solid black;
+  padding: 25px 50px 75px 100px;
+  background-color: lightblue;
+}
+</style> 
+
+</head>
+<body>
+<div class="third">
+<h1>Student information</h1>
+</div>
+
+
+<div>
+<% @texts.each do |text| %>
+<table style="width:100%">
+  <h2><td><%= text.first_name%></td></h2>
+  <h2><td><%= text.last_name%></td></h2>
+  <h2><td><%= text.email%></td></h2>
+  <h2><td><%= text.phone_number%></td></h2>
+   <% end %>
+ </div>
+</table>
+
+</body>
+</html>

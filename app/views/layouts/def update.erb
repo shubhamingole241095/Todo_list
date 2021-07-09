@@ -1,0 +1,15 @@
+def update
+   @book = Book.find(params[:id])
+	
+   if @book.update_attributes(book_param)
+      redirect_to :action => 'show', :id => @book
+   else
+      @subjects = Subject.all
+      render :action => 'edit'
+   end
+   
+end
+
+def book_param
+   params.require(:book).permit(:title, :price, :subject_id, :description)
+end
