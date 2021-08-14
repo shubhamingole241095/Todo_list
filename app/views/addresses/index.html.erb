@@ -1,13 +1,18 @@
-<h1> Address information</h1>
+<h2 class="address_title">Todo lists</h2>
+
 <% if @addresses.empty? %>
-<p>No lists found. create one using the button</p>
+  <p class="address_sub_title">No lists yet. Create one using the button bellow...</p>
 <% end %>
 
-<% @addresses.each do |todo_list| %>
-<h2><%=addresses.address_line1%></h2>
-<h2><%=addresses.address_line2%></h2>
-<h2><%=addresses.city%></h2>
-<h2><%=addresses.country%></h2>
-<h2><%=addresses.pincode%></h2>
+<% @addresses.each do |address| %>
+  <div class="index_row clearfix">
+    <h2 class="address_title"><%= link_to address.title, address %></h2>
+    <p class="address_sub_title"><%= address.description %></p>
+  </div>
 <% end %>
-<%= link_to 'Add address', addresses_path %>
+
+<div class="links">
+  <span class="dummy"></span>
+  <%= link_to "New Address", new_address_path %>
+  <span class="dummy"></span>
+</div>

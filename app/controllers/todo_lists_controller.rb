@@ -1,5 +1,5 @@
 class TodoListsController < ApplicationController
-  #before_action :set_todo_list, only: [:show, :edit, :update, :destroy]
+  before_action :set_todo_list, only: [:show, :edit, :update, :destroy]
 
   # GET /todo_lists
   # GET /todo_lists.json
@@ -72,3 +72,4 @@ class TodoListsController < ApplicationController
       params.require(:todo_list).permit(:title, :description)
     end
 end
+

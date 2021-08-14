@@ -1,5 +1,6 @@
 class AddressesController < ApplicationController
     #before_action :set_address , only :[:show ,:Edit ,:Destroy]
+    
     def index 
     @addresses = Address.all
     end
@@ -38,7 +39,18 @@ class AddressesController < ApplicationController
           
         end
     end
-     
+    
+    def update
+        respond_to do |format|
+          if @addresses.update(address_params)
+            format.html { redirect_to @addresses, notice: 'Todo list was successfully updated.' }
+            format.json { render :show, status: :ok, location: @addresses }
+          else
+            format.html { render :edit }
+            format.json { render json: @addresses.errors, status: :unprocessable_entity }
+          end
+        end
+      end
    
         def Destroy
     	@address = Address.find_by(id: params["id"])
